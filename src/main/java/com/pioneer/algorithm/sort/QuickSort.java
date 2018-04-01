@@ -1,13 +1,14 @@
 package com.pioneer.algorithm.sort;
 
 /**
+ * QuickSort
  * Created by daydayup on 2018/3/31.
  */
 public class QuickSort implements SortAlgorithm {
 
-    private Integer[] array;
+    private int[] array;
 
-    public QuickSort(Integer[] array) {
+    public QuickSort(int[] array) {
         this.array = array;
     }
 

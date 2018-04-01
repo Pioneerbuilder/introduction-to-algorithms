@@ -1,17 +1,18 @@
 package com.pioneer.algorithm.sort;
 
 /**
+ * MergeSort
  * Created by daydayup on 2018/4/1.
  */
 public class MergeSort implements SortAlgorithm {
 
-    private Integer[] array;
+    private int[] array;
 
-    private Integer[] tempArr;
+    private int[] tempArr;
 
-    public MergeSort(Integer[] array) {
+    public MergeSort(int[] array) {
         this.array = array;
-        tempArr = new Integer[array.length];
+        tempArr = new int[array.length];
     }
 
 //    @PostConstruct
