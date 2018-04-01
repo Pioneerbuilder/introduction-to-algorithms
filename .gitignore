@@ -1,3 +1,9 @@
 .idea
+compiler.xml
+deployment.xml
+encodings.xml
+misc.xml
+modules.xml
+vcs.xml
 *.iml
 target
