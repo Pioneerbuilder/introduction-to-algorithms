@@ -34,6 +34,11 @@ public class HeapSort implements SortAlgorithm {
         array[j] = temp;
     }
 
+    /**
+     * 从顶层下沉至底部
+     * @param parent
+     * @param bottom
+     */
     private void adjustHeap(int parent, int bottom) {
         int child;
         int temp;
