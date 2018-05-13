@@ -8,6 +8,7 @@ public class ListNodeSolution {
     static class ListNode {
         ListNode next;
         int val;
+
         ListNode(int val) {
             this.val = val;
         }
@@ -25,8 +26,22 @@ public class ListNodeSolution {
             thisNode = new ListNode(node.val);
             thisNode.next = lastNode;
             lastNode = thisNode;
-        } while((node = node.next) != null);
+        } while ((node = node.next) != null);
         return thisNode;
+    }
+
+    public ListNode reverseLinkList(ListNode head) {
+        ListNode newHead = new ListNode(0);
+        newHead.next = head;
+        ListNode pNode = head;
+        head.next = null;
+        while (pNode != null) {
+            ListNode qNode = head.next;
+            head.next = pNode;
+            pNode = pNode.next;
+            head.next.next = qNode;
+        }
+        return newHead.next;
     }
 
     public static void main(String[] args) {
@@ -44,7 +59,7 @@ public class ListNodeSolution {
         do {
             System.out.println(node.val);
         } while ((node = node.next) != null);
-        ListNode result = solution.reverseList(head);
+        ListNode result = solution.reverseLinkList(head);
 
         node = result;
         System.out.println("the result is:");

@@ -12,31 +12,39 @@ public class BinarySearch implements SearchAlgorithm {
     }
 
     @Override
-    public int nonRecursiveSearch(int number) {
+    public int nonRecursiveSearch(int target) {
         int start = 0, end = array.length - 1;
         while (start <= end) {
             int index = (start + end) >> 1;
-            if (end - start == 1) {
-                if (array[index = start] == number || array[index = end] == number) {
-                    return index;
-                }
-            }
-
-            if (array[index] == number) {
+            if (array[index] == target) {
                 return index;
-            } else if (array[index] > number) {
+            } else if (array[index] > target) {
                 end = index - 1;
             } else {
                 start = index + 1;
             }
         }
-        throw new RuntimeException("no number in the array has been found");
+        return -1;
     }
 
     @Override
-    public int recursiveSearch(int number) {
-        int index = 0;
-        return index;
+    public int recursiveSearch(int target) {
+        int start = 0, end = array.length - 1;
+        if (start <= end) {
+            int index = (start + end) >> 1;
+            if (array[index] > target) {
+                search(target, start, index - 1);
+            } else if (array[index] < target) {
+                search(target, index + 1, end);
+            } else {
+                return index;
+            }
+        }
+        return -1;
+    }
+
+    private void search(int target, int start, int end) {
+
     }
 
     @Override

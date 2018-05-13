@@ -19,7 +19,10 @@ public class QuickSort implements SortAlgorithm {
 
     @Override
     public void nonRecursiveSort() {
-        throw new RuntimeException("not supported");
+        int start = 0, end = array.length - 1;
+        while (start <= end) {
+            int index = partition(start, end);
+        }
     }
 
 
